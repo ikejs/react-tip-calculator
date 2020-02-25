@@ -4,7 +4,9 @@ import TipCalc from './TipCalc';
 
 function App() {
   return (
-    <TipCalc />
+    <div class="App-header">
+      <TipCalc />
+    </div>
   );
 }
 

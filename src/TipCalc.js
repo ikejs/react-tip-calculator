@@ -21,21 +21,27 @@ class TipCalc extends Component {
         return(
             <div>
 
-                <h1>Bill: {bill}</h1>
-                <h1>Tip: {tip}</h1>
-                <h1>Total: {total}</h1>
+                <h1>Bill: ${bill}</h1>
+                <h1>Tip: ${tip}</h1>
+                <h1>Total: ${total}</h1>
 
-                <input type="text"
-                value={this.state.bill}
-                onChange={(e) => {
-                    this.setState({ bill: e.target.value })
-                }}
+                <label for="bill">Bill: </label>
+                <input
+                    id="bill"
+                    type="text"
+                    value={this.state.bill}
+                    onChange={(e) => {
+                        this.setState({ bill: e.target.value })
+                    }}
                 ></input>
-                <input type="text"
-                value={this.state.tipPercent}
-                onChange={(e) => {
-                    this.setState({ tipPercent: e.target.value })
-                }}
+                <label for="tipPercent">Tip Percent: </label>
+                <input
+                    id="tipPercent"
+                    type="text"
+                    value={this.state.tipPercent}
+                    onChange={(e) => {
+                        this.setState({ tipPercent: e.target.value })
+                    }}
                 ></input>
             </div>
         )
