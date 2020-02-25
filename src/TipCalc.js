@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findByLabelText } from '@testing-library/react';
 
 class TipCalc extends Component {
     constructor(props) {
@@ -19,14 +20,17 @@ class TipCalc extends Component {
         const total = bill + tip;
 
         return(
-            <div>
+            <div style={styles.container}>
 
-                <h1>Bill: ${bill}</h1>
-                <h1>Tip: ${tip}</h1>
-                <h1>Total: ${total}</h1>
+                <span style={styles.output}>Bill: ${bill}</span>
+                <span style={styles.output}>Tip: ${tip}</span>
+                <span style={styles.output}>Total: ${total}</span>
+
+                <hr style={styles.line} />
 
                 <label for="bill">Bill: </label>
                 <input
+                    style={styles.input}
                     id="bill"
                     type="text"
                     value={this.state.bill}
@@ -36,6 +40,7 @@ class TipCalc extends Component {
                 ></input>
                 <label for="tipPercent">Tip Percent: </label>
                 <input
+                    style={styles.input}
                     id="tipPercent"
                     type="text"
                     value={this.state.tipPercent}
@@ -49,3 +54,25 @@ class TipCalc extends Component {
 }
 
 export default TipCalc
+
+const fontSize = 20;
+const padding = 0.33;
+
+
+const styles = {
+    container: {
+        display: 'flex',
+        flexDirection: 'column'
+    },
+    input: {
+        padding: `${padding}em`,
+        fontSize: `${fontSize}px`
+    },
+    output: {
+        fontSize: '24px',
+        padding: '0 0 0.5em 0'
+    },
+    line: {
+        width: '100%'
+    }
+}
