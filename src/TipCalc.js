@@ -66,7 +66,9 @@ const styles = {
     },
     input: {
         padding: `${padding}em`,
-        fontSize: `${fontSize}px`
+        fontSize: `${fontSize}px`,
+        borderRadius: '8px',
+        border: '0px'
     },
     output: {
         fontSize: '24px',
